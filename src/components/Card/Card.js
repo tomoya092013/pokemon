@@ -74,7 +74,7 @@ const Card = ({ pokemon }) => {
         <Radar
           name="ポケモンデータ"
           dataKey="A"
-          stroke="#8884d8"
+          stroke="black"
           fill="red"
           fillOpacity={0.6}
         />
