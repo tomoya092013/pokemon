@@ -1,0 +1,26 @@
+.pokemon {
+  width: 250px;
+  -moz-box-shadow: 24px 21px 13px -3px rgba(6, 23, 150, 0.67);
+  -webkit-box-shadow: 24px 21px 13px -3px rgba(6, 23, 150, 0.67);
+  -ms-box-shadow: 24px 21px 13px -3px rgba(6, 23, 150, 0.67);
+  box-shadow: 24px 21px 13px -3px rgba(6, 23, 150, 0.67);
+  border-radius: 10px;
+  background-color: white;
+  margin: 10px;
+}
+
+.pokemonName {
+  margin-top: 0;
+}
+
+.pokemonTypes {
+  text-align: center;
+}
+
+.pokemonStatus p {
+  margin: 0;
+}
+
+tspan {
+  font-size: 10px;
+}

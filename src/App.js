@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAllPokemon, getPokemon } from "./utils/pokemon";
 import Card from "./components/Card/Card";
+import "./App.css";
+import Main from "./components/Main";
 
 function App() {
   const pokemonURL = "https://pokeapi.co/api/v2/pokemon";
@@ -30,7 +32,7 @@ function App() {
     setPokemonData(_pokemonData);
   };
 
-  console.log(pokemonData);
+  // console.log(pokemonData);
 
   return (
     <div className="App">
@@ -38,7 +40,8 @@ function App() {
         <h1>ロード中・・・</h1>
       ) : (
         <>
-          <div className="pokemonCardContainer">
+          <Main />
+          <div className="pokemonAllData">
             {pokemonData.map((pokemon, i) => {
               return <Card key={i} pokemon={pokemon} />;
             })}

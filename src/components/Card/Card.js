@@ -1,20 +1,14 @@
-import React, { PureComponent, useState } from "react";
+import React from "react";
+import "./Card.css";
 import {
   Radar,
   RadarChart,
   PolarGrid,
-  Legend,
   PolarAngleAxis,
   PolarRadiusAxis,
 } from "recharts";
 
 const Card = ({ pokemon }) => {
-  const [hp, setHp] = useState("");
-  const [attack, setAttack] = useState("");
-  const [defense, setDefense] = useState("");
-  const [specialAttack, setSpecialAttack] = useState("");
-  const [specialDefense, setspecialDefense] = useState("");
-  const [speed, setSpeed] = useState("");
   const data = [
     { subject: "HP", A: pokemon.stats[0].base_stat, fullMark: 150 },
     { subject: "こうげき", A: pokemon.stats[1].base_stat, fullMark: 150 },
@@ -25,12 +19,12 @@ const Card = ({ pokemon }) => {
   ];
 
   return (
-    <div className="card">
-      <div className="cardImg">
+    <div className="pokemon">
+      <div className="dataImg">
         <img src={pokemon.sprites.front_default} />
       </div>
-      <h3 className="cardName">{pokemon.name}</h3>
-      <div className="cardtypes">
+      <h3 className="pokemonName">{pokemon.name}</h3>
+      {/* <div className="pokemonTypes">
         <div>タイプ</div>
         {pokemon.types.map((type) => {
           return (
@@ -40,45 +34,47 @@ const Card = ({ pokemon }) => {
             </div>
           );
         })}
+      </div> */}
+      <div className="pokemonInfo">
+        <div className="pokemonStatus">
+          <p>HP：{pokemon.stats[0].base_stat}</p>
+        </div>
+        <div className="pokemonStatus">
+          <p>こうげき：{pokemon.stats[1].base_stat}</p>
+        </div>
+        <div className="pokemonStatus">
+          <p>ぼうぎょ：{pokemon.stats[2].base_stat}</p>
+        </div>
+        <div className="pokemonStatus">
+          <p>とくこう：{pokemon.stats[3].base_stat}</p>
+        </div>
+        <div className="pokemonStatus">
+          <p>とくぼう：{pokemon.stats[4].base_stat}</p>
+        </div>
+        <div className="pokemonStatus">
+          <p>すばやさ：{pokemon.stats[5].base_stat}</p>
+        </div>
       </div>
-      <div className="cardInfo">
-        <div className="cardData">
-          <p className="title">HP：{pokemon.stats[0].base_stat}</p>
-        </div>
-        <div className="cardData">
-          <p className="title">こうげき：{pokemon.stats[1].base_stat}</p>
-        </div>
-        <div className="cardData">
-          <p className="title">ぼうぎょ：{pokemon.stats[2].base_stat}</p>
-        </div>
-        <div className="cardData">
-          <p className="title">とくこう：{pokemon.stats[3].base_stat}</p>
-        </div>
-        <div className="cardData">
-          <p className="title">とくぼう：{pokemon.stats[4].base_stat}</p>
-        </div>
-        <div className="cardData">
-          <p className="title">すばやさ：{pokemon.stats[5].base_stat}</p>
-        </div>
+      <div className="raderChart">
+        <RadarChart
+          cy={120}
+          outerRadius={90}
+          width={250}
+          height={250}
+          data={data}
+        >
+          <PolarGrid />
+          <PolarAngleAxis dataKey="subject" />
+          <PolarRadiusAxis angle={90} domain={[0, 120]} />
+          <Radar
+            name="ポケモンデータ"
+            dataKey="A"
+            stroke="black"
+            fill="red"
+            fillOpacity={0.6}
+          />
+        </RadarChart>
       </div>
-      <RadarChart
-        cy={180}
-        outerRadius={150}
-        width={300}
-        height={350}
-        data={data}
-      >
-        <PolarGrid />
-        <PolarAngleAxis dataKey="pokemon" />
-        <PolarRadiusAxis angle={90} domain={[0, 120]} />
-        <Radar
-          name="ポケモンデータ"
-          dataKey="A"
-          stroke="black"
-          fill="red"
-          fillOpacity={0.6}
-        />
-      </RadarChart>
     </div>
   );
 };
