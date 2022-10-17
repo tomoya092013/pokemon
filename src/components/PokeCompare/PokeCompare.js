@@ -9,10 +9,38 @@ import {
 } from "recharts";
 
 const PokeCompare = ({ leftPokemonData }) => {
+  // const leftData = [
+  //   { subject: "HP", B: leftPokemonData.stats[0].base_stat, fullMark: 150 },
+  //   // {
+  //   //   subject: "こうげき",
+  //   //   B: leftPokemonData.stats[1].base_stat,
+  //   //   fullMark: 150,
+  //   // },
+  //   // {
+  //   //   subject: "ぼうぎょ",
+  //   //   B: leftPokemonData.stats[2].base_stat,
+  //   //   fullMark: 150,
+  //   // },
+  //   // {
+  //   //   subject: "とくこう",
+  //   //   B: leftPokemonData.stats[3].base_stat,
+  //   //   fullMark: 150,
+  //   // },
+  //   // {
+  //   //   subject: "とくぼう",
+  //   //   B: leftPokemonData.stats[4].base_stat,
+  //   //   fullMark: 150,
+  //   // },
+  //   // {
+  //   //   subject: "すばやさ",
+  //   //   B: leftPokemonData.stats[5].base_stat,
+  //   //   fullMark: 150,
+  //   // },
+  // ];
   return (
     <div className="pokemon">
       <h3 className="pokemonName">{leftPokemonData.name}</h3>
-      {/* <h3 className="pokemonName">{leftPokemonData.stats[0].base_stat}</h3> */}
+      <h3 className="pokemonName">{leftPokemonData.stats[0].base_stat}</h3>
       {/* <div className="dataImg">
         <img src={leftPokemonData.sprites.front_default} />
       </div>
