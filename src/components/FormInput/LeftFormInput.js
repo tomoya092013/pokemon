@@ -2,7 +2,7 @@ import { Input } from "@mui/material";
 import React, { useState } from "react";
 
 const LeftFormInput = (props) => {
-  const { setLeftPokemonData } = props;
+  const { setLeftPokemonData, setDataOk } = props;
   const [inputText, setInputText] = useState("");
 
   const handleChange = (e) => {
@@ -11,7 +11,6 @@ const LeftFormInput = (props) => {
 
   const hundleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputText);
     fetch(`https://pokeapi.co/api/v2/pokemon/${inputText}`)
       .then((response) => {
         return response.json();
@@ -19,6 +18,7 @@ const LeftFormInput = (props) => {
       .then((data) => {
         console.log(data);
         setLeftPokemonData(data);
+        setDataOk(true);
       });
     setInputText("");
   };
