@@ -1,0 +1,10 @@
+.rightPokemon {
+  background-color: #99ffff;
+  -moz-box-shadow: 24px 21px 13px -3px rgba(6, 23, 150, 0.67);
+  -webkit-box-shadow: 24px 21px 13px -3px rgba(6, 23, 150, 0.67);
+  -ms-box-shadow: 24px 21px 13px -3px rgba(6, 23, 150, 0.67);
+  box-shadow: 24px 21px 13px -3px rgba(6, 23, 150, 0.67);
+  width: 200px;
+  /* margin: 10px; */
+  padding: 10px;
+}
