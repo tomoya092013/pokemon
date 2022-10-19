@@ -41,23 +41,32 @@ const LeftFormInput = (props) => {
             <img src={leftPokemonData.sprites.front_default} />
           </div>
           <div className="pokemonInfo">
-            <div className="pokemonStatus">
-              <p>HP：{leftPokemonData.stats[0].base_stat}</p>
+            <div className="pokemonStatusToTal">
+              合計：
+              {leftPokemonData.stats[0].base_stat +
+                leftPokemonData.stats[1].base_stat +
+                leftPokemonData.stats[2].base_stat +
+                leftPokemonData.stats[3].base_stat +
+                leftPokemonData.stats[4].base_stat +
+                leftPokemonData.stats[5].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>こうげき：{leftPokemonData.stats[1].base_stat}</p>
+              HP：{leftPokemonData.stats[0].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>ぼうぎょ：{leftPokemonData.stats[2].base_stat}</p>
+              こうげき：{leftPokemonData.stats[1].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>とくこう：{leftPokemonData.stats[3].base_stat}</p>
+              ぼうぎょ：{leftPokemonData.stats[2].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>とくぼう：{leftPokemonData.stats[4].base_stat}</p>
+              とくこう：{leftPokemonData.stats[3].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>すばやさ：{leftPokemonData.stats[5].base_stat}</p>
+              とくぼう：{leftPokemonData.stats[4].base_stat}
+            </div>
+            <div className="pokemonStatus">
+              すばやさ：{leftPokemonData.stats[5].base_stat}
             </div>
           </div>
         </>

@@ -23,7 +23,7 @@ const RightFormInput = (props) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setRightPokemonData(data);
         setRightDataOk(true);
       });
@@ -47,23 +47,32 @@ const RightFormInput = (props) => {
             <img src={rightPokemonData.sprites.front_default} />
           </div>
           <div className="pokemonInfo">
-            <div className="pokemonStatus">
-              <p>HP：{rightPokemonData.stats[0].base_stat}</p>
+            <div className="pokemonStatusToTal">
+              合計：
+              {rightPokemonData.stats[0].base_stat +
+                rightPokemonData.stats[1].base_stat +
+                rightPokemonData.stats[2].base_stat +
+                rightPokemonData.stats[3].base_stat +
+                rightPokemonData.stats[4].base_stat +
+                rightPokemonData.stats[5].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>こうげき：{rightPokemonData.stats[1].base_stat}</p>
+              HP：{rightPokemonData.stats[0].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>ぼうぎょ：{rightPokemonData.stats[2].base_stat}</p>
+              こうげき：{rightPokemonData.stats[1].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>とくこう：{rightPokemonData.stats[3].base_stat}</p>
+              ぼうぎょ：{rightPokemonData.stats[2].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>とくぼう：{rightPokemonData.stats[4].base_stat}</p>
+              とくこう：{rightPokemonData.stats[3].base_stat}
             </div>
             <div className="pokemonStatus">
-              <p>すばやさ：{rightPokemonData.stats[5].base_stat}</p>
+              とくぼう：{rightPokemonData.stats[4].base_stat}
+            </div>
+            <div className="pokemonStatus">
+              すばやさ：{rightPokemonData.stats[5].base_stat}
             </div>
           </div>
         </>
