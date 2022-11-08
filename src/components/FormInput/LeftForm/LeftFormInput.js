@@ -36,7 +36,9 @@ const LeftFormInput = (props) => {
       </form>
       {leftDataOk && (
         <>
-          <h3 className="pokemonName">{leftPokemonData.name}</h3>
+          <h3 className="pokemonNoName">
+            No.{leftPokemonData.id} {leftPokemonData.name}
+          </h3>
           <div className="dataImg">
             <img src={leftPokemonData.sprites.front_default} />
           </div>

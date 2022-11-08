@@ -14,8 +14,9 @@ form {
   height: 40px;
 }
 
-.pokemonName {
+.pokemonNoName {
   margin: 0;
+  padding: 5px;
 }
 
 .dataImg {
